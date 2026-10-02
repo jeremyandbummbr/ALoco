@@ -1,0 +1,1 @@
+Outline derived from Natural Earth 1:50m Admin 0 Countries, public domain. Israel feature (ADMIN=Israel). Source: https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson
