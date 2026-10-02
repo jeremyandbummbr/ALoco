@@ -50,7 +50,7 @@ In Xcode:
 1. Select the blue project icon.
 2. Select the `TLocation` target.
 3. Open `Signing & Capabilities`.
-4. Choose your Apple Development Team.
+4. Choose your Apple Development Team under teams. 
 5. If Xcode says the bundle identifier is unavailable, change `local.aloco.prototype` to something unique, such as `com.yourname.aloco`.
 6. Select the `ALOCOActivity` target and choose the same team.
 
