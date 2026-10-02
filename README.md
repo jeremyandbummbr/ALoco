@@ -19,18 +19,6 @@ It has a simple Apple-style interface: connect the device, search for a place, c
 
 ---
 
-## 🎬 Video Tutorial
-
-Watch the install and first-use walkthrough:
-
-[Download ALoco iPhone Install Tutorial (MP4)](https://github.com/jeremyandbummbr/ALoco/releases/download/tutorial-v1/ALoco-iPhone-Install-Tutorial.mp4)
-
-Captions are included in the video. A separate subtitle file is also available:
-
-[Download captions (SRT)](https://github.com/jeremyandbummbr/ALoco/releases/download/tutorial-v1/ALoco-iPhone-Install-Tutorial.srt)
-
----
-
 ## 📱 iPhone Installation
 
 ALoco is not an App Store app yet. To install it, you build it from Xcode with your own Apple account.
