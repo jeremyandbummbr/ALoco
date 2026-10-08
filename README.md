@@ -83,15 +83,31 @@ Open LocalDevVPN on the iPhone and make sure it says connected. iOS should show 
 
 ### Pairing File
 
-Pairing files are private device credentials. Do not upload them, commit them, or share them.
+Pairing files are private device credentials. Do not upload them, commit them, or share them. A pairing file only works for the exact iPhone it was created for, so it should not be built into a public download.
 
-If you have a raw `pymobiledevice3` remote-pairing file, convert it on the Mac:
+#### Easy Setup
+
+After ALoco is installed on the iPhone:
+
+1. Keep the iPhone plugged into the Mac.
+2. Unlock the iPhone.
+3. Open the `tools` folder in this project.
+4. Double-click **ALoco Pairing Setup.command**.
+5. Wait until it says **Done**.
+6. Open LocalDevVPN on the iPhone and make sure it is connected.
+7. Open ALoco and tap **Connect**.
+
+The setup helper finds this iPhone, prepares the pairing file, and puts it directly into ALoco. You do not need to copy commands or manually import the file.
+
+#### Manual Setup
+
+If you already have a raw `pymobiledevice3` remote-pairing file, you can still convert it manually on the Mac:
 
 ```sh
 python3 tools/convert-pymobiledevice3-pairing.py INPUT.plist OUTPUT.plist
 ```
 
-Import the converted `OUTPUT.plist` inside ALoco.
+Then import the converted `OUTPUT.plist` inside ALoco.
 
 ---
 
