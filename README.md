@@ -19,95 +19,97 @@ It has a simple Apple-style interface: connect the device, search for a place, c
 
 ---
 
-## 📱 iPhone Installation
+## 📱 Super Simple iPhone Setup
 
-ALoco is not an App Store app yet. To install it, you build it from Xcode with your own Apple account.
+ALoco is not on the App Store yet, so the first install uses Xcode on a Mac. After it is installed, the app runs on the iPhone.
 
 ### What You Need
 
-- A Mac with the full Xcode app installed.
-- An iPhone with Developer Mode enabled.
-- A USB cable for first installation.
+- A Mac with Xcode installed.
+- An iPhone plugged into the Mac.
+- The iPhone unlocked.
+- Developer Mode turned on.
 - LocalDevVPN installed on the iPhone.
-- A private pairing file for that iPhone.
+- Wi-Fi on when starting a new location session.
 
-### Step 1: Download The Project
+### Step 1: Download ALoco
 
-Open Terminal on your Mac:
+On the GitHub page, press the green **Code** button, then press **Download ZIP**.
 
-```sh
-git clone https://github.com/jeremyandbummbr/ALoco.git
-cd ALoco
-open TLocation.xcodeproj
+Open the ZIP file. Then open the ALoco folder.
+
+### Step 2: Open In Xcode
+
+Double-click:
+
+```text
+TLocation.xcodeproj
 ```
 
-This downloads the ALoco source code onto your Mac.
+Xcode will open the project.
 
-### Step 2: Sign In Xcode
+### Step 3: Pick Your iPhone
+
+At the top of Xcode, choose your iPhone as the device.
+
+If Xcode asks you to sign in, sign in with your Apple Account.
+
+### Step 4: Add Your Apple Team
 
 In Xcode:
 
-1. Select the blue project icon.
-2. Select the `TLocation` target.
-3. Open `Signing & Capabilities`.
-4. Choose your Apple Development Team under teams. 
-5. If Xcode says the bundle identifier is unavailable, change `local.aloco.prototype` to something unique, such as `com.yourname.aloco`.
-6. Select the `ALOCOActivity` target and choose the same team.
+1. Click the blue project icon.
+2. Click **TLocation**.
+3. Click **Signing & Capabilities**.
+4. Pick your Apple Development Team.
+5. Click **ALOCOActivity** and pick the same team.
 
-### Step 3: Install On iPhone
+If Xcode says the app name is already used, change `local.aloco.prototype` to something unique like:
 
-1. Plug the iPhone into the Mac.
-2. Unlock the iPhone.
-3. Tap **Trust This Computer** if iOS asks.
-4. Select the iPhone as the run destination in Xcode.
-5. Press **Run**.
-
-If the iPhone blocks the app, open:
-
-`Settings -> General -> VPN & Device Management`
-
-Then trust your developer profile.
-
----
-
-## 🔌 First Setup
-
-ALoco needs two things before it can simulate location:
-
-1. LocalDevVPN connected on the iPhone.
-2. A converted ALoco pairing file imported into the app.
-
-### LocalDevVPN
-
-Open LocalDevVPN on the iPhone and make sure it says connected. iOS should show the VPN indicator before you connect in ALoco.
-
-### Pairing File
-
-Pairing files are private device credentials. Do not upload them, commit them, or share them. A pairing file only works for the exact iPhone it was created for, so it should not be built into a public download.
-
-#### Easy Setup
-
-After ALoco is installed on the iPhone:
-
-1. Keep the iPhone plugged into the Mac.
-2. Unlock the iPhone.
-3. Open the `tools` folder in this project.
-4. Double-click **ALoco Pairing Setup.command**.
-5. Wait until it says **Done**.
-6. Open LocalDevVPN on the iPhone and make sure it is connected.
-7. Open ALoco and tap **Connect**.
-
-The setup helper finds this iPhone, prepares the pairing file, and puts it directly into ALoco. You do not need to copy commands or manually import the file.
-
-#### Manual Setup
-
-If you already have a raw `pymobiledevice3` remote-pairing file, you can still convert it manually on the Mac:
-
-```sh
-python3 tools/convert-pymobiledevice3-pairing.py INPUT.plist OUTPUT.plist
+```text
+com.yourname.aloco
 ```
 
-Then import the converted `OUTPUT.plist` inside ALoco.
+### Step 5: Install The App
+
+Press the big **Run** button in Xcode.
+
+If the iPhone asks whether to trust the computer, tap **Trust**.
+
+If the iPhone blocks ALoco, open this on the iPhone:
+
+```text
+Settings → General → VPN & Device Management
+```
+
+Tap your developer profile, then tap **Trust**.
+
+### Step 6: Add The Pairing File The Easy Way
+
+Keep the iPhone plugged in and unlocked.
+
+In the ALoco folder, open the `tools` folder.
+
+Double-click:
+
+```text
+ALoco Pairing Setup.command
+```
+
+Wait until it says **Done**.
+
+That is it. The pairing file is added to ALoco automatically. You do not need to copy commands, rename files, or import anything by hand.
+
+### Step 7: Connect
+
+On the iPhone:
+
+1. Open **LocalDevVPN**.
+2. Make sure it says connected.
+3. Open **ALoco**.
+4. Tap **Connect**.
+
+When ALoco connects, you can use Point Teleport or Route Playback.
 
 ---
 
